@@ -33,8 +33,11 @@ export default class App extends Component<{}> {
                                     calloutOffset={{x: 100, y: 0}}
                     >
                         <View style={styles.marker} />
-                        <MapView.Callout>
-                            <Text style={styles.callout}>Callout</Text>
+                        <MapView.Callout tooltip>
+                            <View style={styles.calloutContainer}>
+                                <Text style={styles.calloutText1}>1st Callout</Text>
+                                <Text style={styles.calloutText2}>2nd Callout</Text>
+                            </View>
                         </MapView.Callout>
                     </MapView.Marker>
                 </MapView>
@@ -60,8 +63,14 @@ const styles = StyleSheet.create({
         width: 30,
         height: 30,
     },
-    callout: {
+    calloutText1: {
         backgroundColor: 'blue',
+    },
+    calloutText2: {
+        backgroundColor: 'green',
+    },
+    calloutContainer: {
+        flexDirection: 'row',
     }
 });
 
