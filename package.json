@@ -9,7 +9,7 @@
   "dependencies": {
     "react": "16.0.0",
     "react-native": "0.51.0",
-    "react-native-maps": "git+https://github.com/react-community/react-native-maps.git"
+    "react-native-maps": "satori-ytolstoguzov/react-native-maps#line-dash-pattern-ios"
   },
   "devDependencies": {
     "babel-jest": "21.2.0",

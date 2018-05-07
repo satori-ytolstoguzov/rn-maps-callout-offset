@@ -16,7 +16,7 @@ export default class App extends Component<{}> {
     render() {
         return (
             <View style={styles.container}>
-                <Text>Callout</Text>
+                <Text>Polyline</Text>
                 <MapView style={styles.map}
                          initialRegion={{
                              latitude: 37.78825,
@@ -26,17 +26,19 @@ export default class App extends Component<{}> {
                          }}
                          provider={MapView.PROVIDER_GOOGLE}
                 >
-                    <MapView.Marker coordinate={{
-                        latitude: 37.8,
-                        longitude: -122.43
-                    }}
-                                    calloutOffset={{x: 100, y: 0}}
-                    >
-                        <View style={styles.marker} />
-                        <MapView.Callout>
-                            <Text style={styles.callout}>Callout</Text>
-                        </MapView.Callout>
-                    </MapView.Marker>
+                    <MapView.Polyline coordinates={[
+                        {latitude: 37.88045, longitude: -122.3903},
+                        {latitude: 37.78825, longitude: -122.4324},
+                        ]}
+                                      lineDashPattern={[30, 30]}
+                    />
+
+                    <MapView.Polyline coordinates={[
+                        {latitude: 37.88045, longitude: -122.4324},
+                        {latitude: 37.78825, longitude: -122.3903},
+                    ]}
+                                      lineDashPattern={[30, 30, 15, 30]}
+                    />
                 </MapView>
             </View>
         );
@@ -55,13 +57,5 @@ const styles = StyleSheet.create({
         width: 375,
         height: 600,
     },
-    marker: {
-        backgroundColor: 'red',
-        width: 30,
-        height: 30,
-    },
-    callout: {
-        backgroundColor: 'blue',
-    }
 });
 
